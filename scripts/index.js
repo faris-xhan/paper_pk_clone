@@ -1,4 +1,25 @@
 const tableBody = document.getElementById("table-body");
+const citiesList = document.getElementById("cities-list");
+const pakCitiesList = document.getElementById("pak-cities-list");
+const citiesPanelBtn = document.getElementById("cities-panel-btn");
+const categoriesList = document.getElementById("catagories-list");
+const categoriesPanelBtn = document.getElementById("catagories-panel-btn");
+
+citiesPanelBtn.onclick = (e) => {
+  if (pakCitiesList.classList.contains("panel-active")) {
+    pakCitiesList.classList.remove("panel-active");
+  } else {
+    pakCitiesList.classList.add("panel-active");
+  }
+};
+
+categoriesPanelBtn.onclick = (e) => {
+  if (categoriesList.classList.contains("panel-active")) {
+    categoriesList.classList.remove("panel-active");
+  } else {
+    categoriesList.classList.add("panel-active");
+  }
+};
 
 const constructTableRow = (link) => {
   const tr = document.createElement("tr");
@@ -18,196 +39,36 @@ const constructTableRow = (link) => {
   return tr;
 };
 
-let posts = [
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-  {
-    id: 0,
-    title: "District & Session Court Khushab Jobs April 2021",
-    description:
-      "Stenographer, Computer Operator, Computer Hardware Technician, Junior Clerk, Imam Masjid, Khadim Masjid, Electrician, Cook with complete details are available here for desirous individuals. The District & Session Court Khushab is offering the jobs which belong to Judiciary. The working hours are as per routine i.e. 8 hours a day and 40 hours a week. The job location is PUNJAB Khushab. The persons meeting the requirement of vacant post(s) may enjoy salary of 0. The most important thing is that the applications must be complete and should receive upto April 26, 2021. The advertisement of District & Session Court Khushab contains complete information about job specifications, job description etc. which is published in Jang Newspaper dated April 1st, 2021, Thursday.",
-    posted_on: "28-Aug-2021",
-    deadline: "28-09-2021",
-    imgSrc: "/assets/dummy_add.jpg",
-    city: 0,
-    category: "2",
-  },
-];
+const constructCityItem = (city) => {
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <a href="/jobs/city/${city.toLowerCase()}">${city}</a>
+  `;
+
+  return li;
+};
+
+const constructCatagoryItem = (catagory) => {
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <a href="/jobs/catagory/${catagory.toLowerCase()}">${catagory}</a>
+  `;
+
+  return li;
+};
 
 posts.forEach((post) => {
   tableBody.append(constructTableRow(post));
+});
+
+cities.forEach((city) => {
+  citiesList.append(constructCityItem(city));
+});
+
+cities.forEach((city) => {
+  pakCitiesList.append(constructCityItem(city));
+});
+
+categories.forEach((catagory) => {
+  categoriesList.append(constructCityItem(catagory));
 });
