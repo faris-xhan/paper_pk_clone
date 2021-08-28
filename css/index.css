@@ -9,6 +9,15 @@
 body {
   background-color: aliceblue;
   font-family: var(--ff);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    whitesmoke 12px,
+    whitesmoke 24px
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
@@ -17,9 +26,10 @@ body {
   --secondary-color: #007157;
   --textPrimary: #fff;
   --textSecondary: #777;
-  --border-bottom: 3px solid var(--primary-color);
-  --mb-bottom: 1rem;
+  --border: 3px solid var(--primary-color);
+  --mb: 1rem;
   --ff: "Salsa", cursive;
+  --shadow: 0 0 3px #cacaca;
 
   font-size: 16px;
 }
@@ -40,11 +50,13 @@ body {
   margin: 0 auto;
   background-color: white;
   overflow: hidden;
+  border-bottom: var(--border);
+  border-top: var(--border);
+  box-shadow: var(--shadow);
 }
 
 .container > section {
   padding: 0.5rem;
-  border: 1px solid black;
 }
 
 .body {
@@ -71,6 +83,7 @@ body {
 .header {
   display: flex;
   align-items: center;
+  box-shadow: var(--shadow);
 }
 
 /* Header - Logo */
@@ -104,6 +117,10 @@ body {
 
   .body > section {
     flex-basis: 100%;
+  }
+
+  .header {
+    margin-bottom: var(--mb);
   }
 }
 
