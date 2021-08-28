@@ -18,7 +18,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <link
+      rel="stylesheet"
+      id="Salsa-css"
+      href="http://fonts.googleapis.com/css?family=Salsa%3Aregular"
+      type="text/css"
+      media="all"
+    />
     <link rel="stylesheet" href="/css/index.css" />
     <title>Paper pk - jobs</title>
   </head>
@@ -37,10 +43,44 @@
           </a>
         </section>
       </section>
+      <section class="nav">
+        <nav class="nav-bar">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/govt-jobs.html">govt jobs</a>
+          <a class="nav-link" href="/fpsc-jobs.html">fpsc</a>
+        </nav>
+      </section>
 
       <!-- Body  -->
       <section class="body">
-        <section class="body-head">Body Head</section>
+        <section class="body-head">
+          <div class="breaking-news">
+            <div class="heading">
+              <span class="fa fa-bolt"></span>
+              <h2>latest jobs ads</h2>
+            </div>
+            <a href="#" id="typewriter"></a>
+          </div>
+          <script>
+            // Typewriter effect
+            let i = 0;
+            const speed = 130;
+            const text = "District & Session Court Khushab Jobs April 2021";
+            const tptr = document.getElementById("typewriter");
+            tptr.title = text;
+            const typeWriterEffect = (text) => {
+              if (i < text.length) {
+                tptr.innerHTML += text[i];
+                ++i;
+                setTimeout(() => {
+                  typeWriterEffect(text);
+                }, speed);
+              }
+            };
+
+            typeWriterEffect(text);
+          </script>
+        </section>
         <section class="main-content">Main Content</section>
         <section class="side-bar">Side Bar</section>
       </section>

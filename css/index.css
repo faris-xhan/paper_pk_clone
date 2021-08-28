@@ -26,7 +26,9 @@ body {
   --secondary-color: #007157;
   --textPrimary: #fff;
   --textSecondary: #777;
-  --border: 3px solid var(--primary-color);
+
+  --border: 3px solid var(--secondary-color);
+  --bd-radius: 3px;
   --mb: 1rem;
   --ff: "Salsa", cursive;
   --shadow: 0 0 3px #cacaca;
@@ -108,6 +110,73 @@ body {
 .mobile-menu-btn i {
   font-size: 2rem;
 }
+
+/* Nav Section */
+
+.nav-bar {
+  background-color: var(--primary-color);
+  border-radius: var(--bd-radius);
+  border-bottom: var(--border);
+  border-bottom-width: 5px;
+  display: flex;
+  padding: 0 5px;
+}
+
+.nav-link {
+  color: var(--textPrimary);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.06rem;
+  font-family: Salsa;
+  border-right: var(--border);
+}
+
+.nav-link.active {
+  background-color: var(--secondary-color);
+}
+
+/* Body Section */
+
+/* --> Body Head */
+
+.body-head {
+  background: var(--primary-color);
+  border-top: var(--border);
+  border-radius: var(--bd-radius);
+}
+
+.breaking-news {
+  display: flex;
+  color: var(--textPrimary);
+  align-items: center;
+}
+
+.breaking-news .heading,
+.breaking-news a {
+  padding: 4px 8px;
+  padding-top: 0;
+  color: var(--textPrimary);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.breaking-news .heading {
+  border-right: 1px solid var(--secondary-color);
+}
+.breaking-news .fa {
+  font-size: 1rem;
+  display: none;
+}
+.breaking-news h2 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-family: var(--ff);
+  font-weight: 400;
+}
 /* Media Query */
 
 @media screen and (max-width: 990px) {
@@ -127,5 +196,17 @@ body {
 @media screen and (max-width: 600px) {
   .menu {
     display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .breaking-news .fa {
+    display: block;
+  }
+
+  .breaking-news h2 {
+    display: none;
   }
 }
