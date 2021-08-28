@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,6 +22,7 @@
     <title>Paper pk - jobs</title>
   </head>
   <body>
+    <a id="button"></a>
     <div class="container">
       <!-- Header -->
       <section class="header">
@@ -97,14 +98,51 @@
               </p>
             </article>
           </section>
-          <section class="content-table">Content</section>
-          <section class="content-footer">Footer</section>
+          <section class="content-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>View</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </section>
+          <section class="content-footer">
+            <div class="pagination">
+              <a href="#">&laquo;</a>
+              <a href="#first">First</a>
+              <a href="#">1</a>
+              <a class="active" href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#last">Last</a>
+              <a href="#">&raquo;</a>
+            </div>
+          </section>
         </section>
         <section class="side-bar">Side Bar</section>
       </section>
 
       <!-- Footer -->
-      <section class="footer">Footer</section>
+      <section class="footer">
+        <section class="links">
+          <a href="">About Us</a>
+          <a href="">Contact Us</a>
+          <a href="">Disclaimer</a>
+          <a href="">Advertising</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Site Map</a>
+          <a href="">Jobs @ Paperpk</a>
+        </section>
+        <section class="copyrights">
+          <p>Copyright &copy; 2021 paperpkjobs.pk All Rights Reserved.</p>
+        </section>
+      </section>
     </div>
     <script async src="/scripts/index.js"></script>
   </body>
