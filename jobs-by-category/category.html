@@ -19,10 +19,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/post_page.css" />
     <title>Paper pk - jobs</title>
   </head>
   <body>
-    <a id="button"></a>
     <div class="container">
       <!-- Header -->
       <section class="header">
@@ -51,57 +51,13 @@
 
       <!-- Body  -->
       <section class="body">
-        <section class="body-head">
-          <div class="breaking-news">
-            <div class="heading">
-              <span class="fa fa-bolt"></span>
-              <h2>latest jobs ads</h2>
-            </div>
-            <a href="#" id="typewriter"></a>
+        <section class="body-head content-table related related-articles">
+          <div class="box-head">
+            <h2>Category Name</h2>
           </div>
-          <script>
-            // Typewriter effect
-            let i = 0;
-            const speed = 130;
-            const text = "District & Session Court Khushab Jobs April 2021";
-            const tptr = document.getElementById("typewriter");
-            tptr.title = text;
-            const typeWriterEffect = (text) => {
-              if (i < text.length) {
-                tptr.innerHTML += text[i];
-                ++i;
-                setTimeout(() => {
-                  typeWriterEffect(text);
-                }, speed);
-              }
-            };
-
-            typeWriterEffect(text);
-          </script>
         </section>
+
         <section class="main-content">
-          <section class="content-header">
-            <article>
-              <h1>
-                <span class="fa fa-th" aria-hidden="true"></span>Latest Paperpk
-                Jobs
-              </h1>
-              <p>
-                PaperPk is Designed for people who want to see daily newspaper
-                jobs at one place instead of visiting different newspaper
-                websites. We daily update this website with new jobs which are
-                published in different newspapers like Daily Jang, Nawa-i-Waqt,
-                Daily Express, Dawn, The Nation, The News etc. Anyone can easily
-                find here job of his own choice as the jobs available all over
-                Pakistan which are published in different newspapers are updated
-                here on daily basis. The people who are in search of jobs are
-                advised to frequently visit our website paperpkjobs.pk. You will
-                find here jobs relating to private sector, government
-                departments, multi-national companies, NGOs and many more. We
-                are further improving our website for the ease of our users.
-              </p>
-            </article>
-          </section>
           <section class="content-table">
             <table>
               <thead>
@@ -111,7 +67,7 @@
                   <th>View</th>
                 </tr>
               </thead>
-              <tbody id="table-body"></tbody>
+              <tbody id="category-jobs-table"></tbody>
             </table>
           </section>
           <section class="content-footer">
@@ -129,6 +85,7 @@
             </div>
           </section>
         </section>
+
         <section class="side-bar">
           <div class="box search-box">
             <div class="search-container">
@@ -149,6 +106,7 @@
             </div>
             <ul id="cities-list"></ul>
           </div>
+
           <div class="box panel">
             <div class="box-head">
               <h2>Jobs in Pakistan</h2>
@@ -158,6 +116,7 @@
             </div>
             <ul class="panel-list" id="pak-cities-list"></ul>
           </div>
+
           <div class="box panel">
             <div class="box-head">
               <h2>Jobs by Catagories</h2>
@@ -186,8 +145,8 @@
         </section>
       </section>
     </div>
-    <script src="/assets/dummy_data.js"></script>
-    <script src="/scripts/index.js"></script>
-    <script src="/scripts/home.js"></script>
+    <script rel="module" src="/assets/dummy_data.js"></script>
+    <script rel="module" src="/scripts/index.js"></script>
+    <script src="/scripts/category.js"></script>
   </body>
 </html>

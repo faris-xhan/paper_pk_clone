@@ -47,45 +47,6 @@ body {
 
 /* Common */
 
-/* BACK TO TOP BUTTON STYLE */
-#button {
-  display: inline-block;
-  background-color: #ff9800;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-}
-#button::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
-#button:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#button:active {
-  background-color: #555;
-}
-#button.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ENDS BACK TO TOP HERE */
-
 .container {
   width: 1045px;
   margin: 0 auto;
@@ -192,6 +153,7 @@ body {
 .breaking-news {
   display: flex;
   color: var(--textPrimary);
+  align-items: center;
 }
 
 .breaking-news .heading,
@@ -364,7 +326,7 @@ body {
 /* Sidebar */
 
 .side-bar {
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .side-bar .box {
@@ -372,6 +334,48 @@ body {
   border-radius: var(--bd-radius);
   margin-bottom: var(--mb);
 }
+
+/* Search Bar */
+
+.search-box {
+  border: none !important;
+  padding: 0;
+}
+.search-container {
+  padding: 1rem 0;
+}
+
+.search-container form {
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input[type="text"] {
+  padding: 6px;
+  font-size: 17px;
+  border: 2px solid var(--secondary-color);
+  border-right: none;
+  width: 100%;
+  outline: none;
+}
+
+.search-container input[type="text"]:focus {
+  background-color: #f2f2f2;
+}
+
+.search-container button {
+  padding: 6px 10px;
+  background: var(--primary-color);
+  font-size: 17px;
+  cursor: pointer;
+  border-left: none;
+  outline: none !important;
+}
+
+.search-container button:hover {
+  background: var(--secondary-color);
+}
+/* Search Bar End */
 
 .box-head {
   padding: 10px;
@@ -497,6 +501,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .container > section {
+    padding: 0;
+  }
   .menu {
     display: block;
   }
@@ -510,6 +517,18 @@ body {
   }
 
   .breaking-news h2 {
+    display: none;
+  }
+
+  .main-content tbody .btn {
+    margin-right: 5px;
+  }
+
+  .main-content {
+    margin-bottom: 1rem;
+  }
+
+  .related-articles {
     display: none;
   }
 }

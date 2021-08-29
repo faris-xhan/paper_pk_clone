@@ -1,4 +1,3 @@
-const tableBody = document.getElementById("table-body");
 const citiesList = document.getElementById("cities-list");
 const pakCitiesList = document.getElementById("pak-cities-list");
 const citiesPanelBtn = document.getElementById("cities-panel-btn");
@@ -26,12 +25,12 @@ const constructTableRow = (link) => {
   tr.innerHTML = `
   <tr>
     <td>
-      <a href="/jobs/${link.id}">${link.title}</a>
+      <a href="/jobs/${link.id}.html">${link.title}</a>
     </td>
     <td>${link.posted_on}</td>
     <td>
       <button class="btn details-btn">
-        <a href="/jobs/${link.id}">Details</a>
+        <a href="/jobs/${link.id}.html">Details</a>
       </button>
     </td> 
   </tr>
@@ -41,25 +40,24 @@ const constructTableRow = (link) => {
 
 const constructCityItem = (city) => {
   const li = document.createElement("li");
+  const link = city.replace(/\W+/g, "-").toLowerCase();
+
   li.innerHTML = `
-    <a href="/jobs/city/${city.toLowerCase()}">${city}</a>
+    <a href="/jobs-in-city/city.html">${city}</a>
   `;
 
   return li;
 };
 
-const constructCatagoryItem = (catagory) => {
+const constructCategoryItem = (category) => {
   const li = document.createElement("li");
+  const link = category.replace(/\W+/g, "-").toLowerCase();
   li.innerHTML = `
-    <a href="/jobs/catagory/${catagory.toLowerCase()}">${catagory}</a>
+    <a href="/jobs-by-category/category.html">${category}</a>
   `;
 
   return li;
 };
-
-posts.forEach((post) => {
-  tableBody.append(constructTableRow(post));
-});
 
 cities.forEach((city) => {
   citiesList.append(constructCityItem(city));
@@ -69,6 +67,6 @@ cities.forEach((city) => {
   pakCitiesList.append(constructCityItem(city));
 });
 
-categories.forEach((catagory) => {
-  categoriesList.append(constructCityItem(catagory));
+categories.forEach((category) => {
+  categoriesList.append(constructCategoryItem(category));
 });
