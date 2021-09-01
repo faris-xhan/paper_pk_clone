@@ -581,3 +581,7 @@ body {
 .open-nav-btn {
   padding: 10px;
 }
+
+.sidenav .active {
+  color: white !important;
+}

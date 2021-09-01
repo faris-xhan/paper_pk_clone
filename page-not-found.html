@@ -28,9 +28,38 @@
       <!-- Header -->
       <section class="header">
         <section class="menu">
-          <button class="btn mobile-menu-btn" id="mobile-menu">
+          <button
+            class="btn mobile-menu-btn open-nav-btn"
+            id="mobile-menu"
+            style="font-size: 30px; cursor: pointer"
+            onclick="openNav()"
+          >
             <i class="fas fa-bars"></i>
           </button>
+          <div class="mobile-nav-bar">
+            <div id="mySidenav" class="sidenav">
+              <button class="btn">
+                <a
+                  href="javascript:void(0)"
+                  class="closebtn"
+                  onclick="closeNav()"
+                  >&times;</a
+                >
+              </button>
+              <a class="nav-link active" href="./">Home</a>
+              <a class="nav-link" href="./category.html">govt jobs</a>
+              <a class="nav-link" href="./category.html">fpsc</a>
+            </div>
+            <script>
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+              }
+
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+              }
+            </script>
+          </div>
         </section>
         <section class="logo">
           <a href="./">
