@@ -1,4 +1,4 @@
 # paper_pk_clone
-PaperPk website clone { for study purpose ofcourse } 
+PaperPk website
 
  https://faris-xhan.github.io/paper_pk_clone/
