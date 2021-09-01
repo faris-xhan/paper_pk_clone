@@ -25,12 +25,12 @@ const constructTableRow = (link) => {
   tr.innerHTML = `
   <tr>
     <td>
-      <a href="/jobs/${link.id}.html">${link.title}</a>
+      <a href="./${link.id}.html">${link.title}</a>
     </td>
     <td>${link.posted_on}</td>
     <td>
       <button class="btn details-btn">
-        <a href="/jobs/${link.id}.html">Details</a>
+        <a href="./${link.id}.html">Details</a>
       </button>
     </td> 
   </tr>
@@ -43,7 +43,7 @@ const constructCityItem = (city) => {
   const link = city.replace(/\W+/g, "-").toLowerCase();
 
   li.innerHTML = `
-    <a href="/jobs-in-city/city.html">${city}</a>
+    <a href="./city.html">${city}</a>
   `;
 
   return li;
@@ -53,7 +53,7 @@ const constructCategoryItem = (category) => {
   const li = document.createElement("li");
   const link = category.replace(/\W+/g, "-").toLowerCase();
   li.innerHTML = `
-    <a href="/jobs-by-category/category.html">${category}</a>
+    <a href="./category.html">${category}</a>
   `;
 
   return li;
